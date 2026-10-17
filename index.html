@@ -2,11 +2,10 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>HHVS DP1 第一次段考 數學科 級距公告</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- 引入截圖中的核心科技字體 Chakra Petch + JetBrains Mono + Noto Sans TC -->
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -36,20 +35,19 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 30px 16px;
-      /* 背景網格線條 */
+      padding: 20px 12px;
       background-image: 
         linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 32px 32px;
+      background-size: 24px 24px;
     }
 
     .toolbar {
       position: fixed;
-      top: 16px;
-      right: 16px;
+      top: 12px;
+      right: 12px;
       display: flex;
-      gap: 10px;
+      gap: 8px;
       z-index: 99;
     }
 
@@ -57,71 +55,68 @@
       background: #111a2e;
       color: var(--cyan);
       border: 1px solid #1e3a5f;
-      padding: 8px 16px;
+      padding: 6px 12px;
       border-radius: 6px;
       cursor: pointer;
       font-family: 'Chakra Petch', sans-serif;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 1px;
-      transition: all 0.2s;
-    }
-
-    .btn:hover {
-      background: var(--cyan);
-      color: #000;
-      box-shadow: 0 0 12px var(--cyan-glow);
     }
 
     .poster {
       width: 100%;
-      max-width: 920px;
+      max-width: 900px;
       background: var(--panel-bg);
       border: 1px solid #1e293b;
       border-radius: 16px;
-      padding: 36px 40px;
+      padding: 32px 28px;
       backdrop-filter: blur(20px);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
       position: relative;
     }
 
     /* 頂部 Header */
     .sub-tag {
       font-family: 'Chakra Petch', sans-serif;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 2.5px;
+      letter-spacing: 1.5px;
       color: var(--cyan);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       margin-bottom: 8px;
+      word-break: break-all;
     }
 
     .sub-tag::before {
       content: '';
       display: inline-block;
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--cyan);
-      box-shadow: 0 0 8px var(--cyan);
+      box-shadow: 0 0 6px var(--cyan);
+      flex-shrink: 0;
     }
 
     .header-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .main-title {
       font-family: 'Chakra Petch', 'Noto Sans TC', sans-serif;
-      font-size: 38px;
+      font-size: 32px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       color: #ffffff;
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
     .main-title span {
@@ -133,13 +128,12 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 6px;
+      gap: 4px;
     }
 
     .badge-privacy {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--green);
-      font-family: 'Noto Sans TC', sans-serif;
       display: flex;
       align-items: center;
       gap: 4px;
@@ -147,161 +141,164 @@
 
     .badge-sample {
       font-family: 'Chakra Petch', monospace;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--cyan);
       border: 1px solid rgba(0, 242, 254, 0.3);
       background: rgba(0, 242, 254, 0.05);
-      padding: 3px 10px;
+      padding: 2px 8px;
       border-radius: 4px;
-      letter-spacing: 1px;
     }
 
     .exam-desc {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-sub);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+      line-height: 1.4;
     }
 
     /* 數據卡片區 */
     .stats-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 16px;
+      gap: 12px;
+      margin-bottom: 12px;
     }
 
     .stats-container-bottom {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 32px;
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 18px 22px;
-      position: relative;
+      border-radius: 10px;
+      padding: 14px 16px;
     }
 
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-sub);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .card-num {
       font-family: 'Chakra Petch', sans-serif;
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 700;
       line-height: 1;
       display: flex;
       align-items: baseline;
-      gap: 6px;
+      gap: 4px;
     }
 
     .card-unit {
-      font-size: 14px;
+      font-size: 12px;
       color: var(--text-sub);
       font-weight: normal;
       font-family: 'Noto Sans TC', sans-serif;
     }
 
     .card-subtext {
-      font-size: 12px;
+      font-size: 11px;
       color: #64748b;
-      margin-top: 8px;
+      margin-top: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     /* 圖表區 */
     .chart-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 24px 28px;
+      border-radius: 12px;
+      padding: 20px 18px;
     }
 
     .chart-title {
       font-family: 'Chakra Petch', 'Noto Sans TC', sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: #ffffff;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .chart-legend {
       display: flex;
-      gap: 16px;
-      font-size: 12px;
-      font-family: 'Noto Sans TC', sans-serif;
-      font-weight: 500;
+      gap: 10px;
+      font-size: 11px;
+      flex-wrap: wrap;
     }
 
     .legend-item {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
     }
 
     .legend-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
     }
 
     .bar-row {
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 11px;
-      font-size: 13px;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 12px;
     }
 
     .bar-label {
       font-family: 'Chakra Petch', monospace;
-      width: 85px;
+      width: 68px;
       color: var(--text-sub);
       font-weight: 600;
       flex-shrink: 0;
+      font-size: 12px;
     }
 
     .bar-track {
       flex: 1;
-      height: 20px;
+      height: 18px;
       background: rgba(255, 255, 255, 0.03);
       border-radius: 4px;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.05);
+      min-width: 60px;
     }
 
     .bar-fill {
       height: 100%;
       border-radius: 3px;
-      transition: width 0.5s ease;
     }
 
     .bar-val {
       font-family: 'Chakra Petch', monospace;
-      width: 100px;
+      width: 78px;
       text-align: right;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 12px;
       flex-shrink: 0;
     }
 
     .pass-split {
       position: relative;
       text-align: center;
-      margin: 14px 0;
+      margin: 12px 0;
     }
 
     .pass-split::before {
@@ -311,28 +308,64 @@
       top: 50%;
       width: 100%;
       height: 1px;
-      background: rgba(16, 185, 129, 0.35);
       border-top: 1px dashed rgba(16, 185, 129, 0.6);
     }
 
     .pass-split span {
       position: relative;
-      background: #0d1527;
-      padding: 0 14px;
+      background: #0a1120;
+      padding: 0 10px;
       color: var(--green);
-      font-size: 11px;
+      font-size: 10px;
       font-family: 'Chakra Petch', sans-serif;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
     }
 
-    @media print {
-      .toolbar { display: none !important; }
-      body { background: #fff !important; color: #000 !important; }
-      .poster { background: #fff !important; border: 1px solid #ccc !important; box-shadow: none !important; }
-      .card, .chart-box { background: #f8fafc !important; border: 1px solid #e2e8f0 !important; }
-      .main-title, .main-title span { color: #000 !important; text-shadow: none !important; }
-      .bar-track { background: #eee !important; }
+    /* 手機螢幕優化 (RWD) */
+    @media (max-width: 640px) {
+      body {
+        padding: 12px 8px;
+      }
+      .toolbar {
+        display: none; /* 手機端隱藏列印按鈕，畫面更乾淨 */
+      }
+      .poster {
+        padding: 20px 14px;
+        border-radius: 12px;
+      }
+      .main-title {
+        font-size: 24px;
+      }
+      .header-badge {
+        align-items: flex-start;
+      }
+      .stats-container {
+        grid-template-columns: 1fr 1fr; /* 3格改為 2格 + 跨行 */
+      }
+      .stats-container .card:last-child {
+        grid-column: span 2; /* 及格率跨滿寬度 */
+      }
+      .stats-container-bottom {
+        grid-template-columns: 1fr 1fr;
+      }
+      .card {
+        padding: 12px 10px;
+      }
+      .card-num {
+        font-size: 26px;
+      }
+      .bar-label {
+        width: 58px;
+        font-size: 11px;
+      }
+      .bar-val {
+        width: 70px;
+        font-size: 11px;
+      }
+      .chart-box {
+        padding: 16px 10px;
+      }
     }
   </style>
 </head>
@@ -343,7 +376,6 @@
   </div>
 
   <div class="poster">
-    <!-- Header -->
     <div class="sub-tag">HHVS DEPARTMENT OF DATA PROCESSING • GRADE 1</div>
     <div class="header-top">
       <h1 class="main-title">HHVS DP1 <span>數學科</span> 成績級距分析</h1>
@@ -354,7 +386,7 @@
     </div>
     <div class="exam-desc">115學年度 第一學期 第一次定期考查 • 全班宏觀統計與落點分佈公告</div>
 
-    <!-- 頂部3格卡片 -->
+    <!-- 頂部卡片區 -->
     <div class="stats-container">
       <div class="card">
         <div class="card-header">
@@ -384,7 +416,7 @@
       </div>
     </div>
 
-    <!-- 頂部2格卡片 -->
+    <!-- 頂部次要卡片區 -->
     <div class="stats-container-bottom">
       <div class="card">
         <div class="card-header">
@@ -405,14 +437,14 @@
       </div>
     </div>
 
-    <!-- 級距次數分佈圖 -->
+    <!-- 級距圖表區 -->
     <div class="chart-box">
       <div class="chart-title">
         <span>成績級距次數分佈圖 (Score Distribution)</span>
         <div class="chart-legend">
-          <div class="legend-item"><div class="legend-dot" style="background: var(--green);"></div>及格群 (≥60分: 8人)</div>
-          <div class="legend-item"><div class="legend-dot" style="background: var(--yellow);"></div>衝刺區 (40-59分: 4人)</div>
-          <div class="legend-item"><div class="legend-dot" style="background: var(--red);"></div>待加強 (<40分: 20人)</div>
+          <div class="legend-item"><div class="legend-dot" style="background: var(--green);"></div>及格 (8人)</div>
+          <div class="legend-item"><div class="legend-dot" style="background: var(--yellow);"></div>衝刺 (4人)</div>
+          <div class="legend-item"><div class="legend-dot" style="background: var(--red);"></div>待強 (20人)</div>
         </div>
       </div>
 
