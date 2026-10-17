@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HHVS DP1 第一次段考 數學科 級距公告</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 引入截圖中的核心科技字體 Chakra Petch + JetBrains Mono + Noto Sans TC -->
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #060913;
+      --panel-bg: rgba(10, 16, 30, 0.85);
+      --card-bg: rgba(16, 24, 45, 0.7);
+      --card-border: #1e2c47;
+      --cyan: #00f2fe;
+      --cyan-glow: rgba(0, 242, 254, 0.25);
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Noto Sans TC', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 30px 16px;
+      /* 背景網格線條 */
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .toolbar {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 10px;
+      z-index: 99;
+    }
+
+    .btn {
+      background: #111a2e;
+      color: var(--cyan);
+      border: 1px solid #1e3a5f;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--cyan);
+      color: #000;
+      box-shadow: 0 0 12px var(--cyan-glow);
+    }
+
+    .poster {
+      width: 100%;
+      max-width: 920px;
+      background: var(--panel-bg);
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 36px 40px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    /* 頂部 Header */
+    .sub-tag {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .sub-tag::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .main-title {
+      font-family: 'Chakra Petch', 'Noto Sans TC', sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .main-title span {
+      color: var(--cyan);
+      text-shadow: 0 0 16px rgba(0, 242, 254, 0.4);
+    }
+
+    .header-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .badge-privacy {
+      font-size: 12px;
+      color: var(--green);
+      font-family: 'Noto Sans TC', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .badge-sample {
+      font-family: 'Chakra Petch', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cyan);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      background: rgba(0, 242, 254, 0.05);
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    .exam-desc {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+    }
+
+    /* 數據卡片區 */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .stats-container-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      position: relative;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+    }
+
+    .card-num {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .card-unit {
+      font-size: 14px;
+      color: var(--text-sub);
+      font-weight: normal;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .card-subtext {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 8px;
+    }
+
+    /* 圖表區 */
+    .chart-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px 28px;
+    }
+
+    .chart-title {
+      font-family: 'Chakra Petch', 'Noto Sans TC', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chart-legend {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 500;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 11px;
+      font-size: 13px;
+    }
+
+    .bar-label {
+      font-family: 'Chakra Petch', monospace;
+      width: 85px;
+      color: var(--text-sub);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.5s ease;
+    }
+
+    .bar-val {
+      font-family: 'Chakra Petch', monospace;
+      width: 100px;
+      text-align: right;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .pass-split {
+      position: relative;
+      text-align: center;
+      margin: 14px 0;
+    }
+
+    .pass-split::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+      background: rgba(16, 185, 129, 0.35);
+      border-top: 1px dashed rgba(16, 185, 129, 0.6);
+    }
+
+    .pass-split span {
+      position: relative;
+      background: #0d1527;
+      padding: 0 14px;
+      color: var(--green);
+      font-size: 11px;
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    @media print {
+      .toolbar { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+      .poster { background: #fff !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+      .card, .chart-box { background: #f8fafc !important; border: 1px solid #e2e8f0 !important; }
+      .main-title, .main-title span { color: #000 !important; text-shadow: none !important; }
+      .bar-track { background: #eee !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button class="btn" onclick="window.print()">列印 / 存為PDF</button>
+  </div>
+
+  <div class="poster">
+    <!-- Header -->
+    <div class="sub-tag">HHVS DEPARTMENT OF DATA PROCESSING • GRADE 1</div>
+    <div class="header-top">
+      <h1 class="main-title">HHVS DP1 <span>數學科</span> 成績級距分析</h1>
+      <div class="header-badge">
+        <div class="badge-privacy">🔒 隱私保護：無個人成績</div>
+        <div class="badge-sample">SAMPLE: N=32</div>
+      </div>
+    </div>
+    <div class="exam-desc">115學年度 第一學期 第一次定期考查 • 全班宏觀統計與落點分佈公告</div>
+
+    <!-- 頂部3格卡片 -->
+    <div class="stats-container">
+      <div class="card">
+        <div class="card-header">
+          <span>應考總數</span>
+          <span>👥</span>
+        </div>
+        <div class="card-num" style="color: #fff;">32 <span class="card-unit">人</span></div>
+        <div class="card-subtext">全員實考到齊</div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span>全班平均</span>
+          <span>🧮</span>
+        </div>
+        <div class="card-num" style="color: var(--yellow);">37.2 <span class="card-unit">分</span></div>
+        <div class="card-subtext">二段具備進步潛力</div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span>及格率 (≥60)</span>
+          <span>📈</span>
+        </div>
+        <div class="card-num" style="color: var(--green);">25.0 <span class="card-unit">%</span></div>
+        <div class="card-subtext">及格人數共 8 人</div>
+      </div>
+    </div>
+
+    <!-- 頂部2格卡片 -->
+    <div class="stats-container-bottom">
+      <div class="card">
+        <div class="card-header">
+          <span>最高分數</span>
+          <span>🏆</span>
+        </div>
+        <div class="card-num" style="color: var(--cyan);">94 <span class="card-unit">分</span></div>
+        <div class="card-subtext">掌握度優秀</div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span>最低分數</span>
+          <span>📉</span>
+        </div>
+        <div class="card-num" style="color: var(--red);">0 <span class="card-unit">分</span></div>
+        <div class="card-subtext">需加強基礎概念</div>
+      </div>
+    </div>
+
+    <!-- 級距次數分佈圖 -->
+    <div class="chart-box">
+      <div class="chart-title">
+        <span>成績級距次數分佈圖 (Score Distribution)</span>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background: var(--green);"></div>及格群 (≥60分: 8人)</div>
+          <div class="legend-item"><div class="legend-dot" style="background: var(--yellow);"></div>衝刺區 (40-59分: 4人)</div>
+          <div class="legend-item"><div class="legend-dot" style="background: var(--red);"></div>待加強 (<40分: 20人)</div>
+        </div>
+      </div>
+
+      <!-- 90 - 100 -->
+      <div class="bar-row">
+        <div class="bar-label">90 - 100</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 25%; background: var(--cyan);"></div>
+        </div>
+        <div class="bar-val" style="color: var(--cyan);">2 人 (6.3%)</div>
+      </div>
+
+      <!-- 80 - 89 -->
+      <div class="bar-row">
+        <div class="bar-label">80 - 89</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 12.5%; background: var(--green);"></div>
+        </div>
+        <div class="bar-val" style="color: var(--green);">1 人 (3.1%)</div>
+      </div>
+
+      <!-- 70 - 79 -->
+      <div class="bar-row">
+        <div class="bar-label">70 - 79</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 62.5%; background: var(--green);"></div>
+        </div>
+        <div class="bar-val" style="color: var(--green);">5 人 (15.6%)</div>
+      </div>
+
+      <!-- 60 - 69 -->
+      <div class="bar-row">
+        <div class="bar-label">60 - 69</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 25%; background: var(--green);"></div>
+        </div>
+        <div class="bar-val" style="color: var(--green);">2 人 (6.3%)</div>
+      </div>
+
+      <!-- 分水嶺 -->
+      <div class="pass-split">
+        <span>PASS LINE 及格標準線 (60分)</span>
+      </div>
+
+      <!-- 50 - 59 -->
+      <div class="bar-row">
+        <div class="bar-label">50 - 59</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 12.5%; background: var(--yellow);"></div>
+        </div>
+        <div class="bar-val" style="color: var(--yellow);">1 人 (3.1%)</div>
+      </div>
+
+      <!-- 40 - 49 -->
+      <div class="bar-row">
+        <div class="bar-label">40 - 49</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 37.5%; background: var(--yellow);"></div>
+        </div>
+        <div class="bar-val" style="color: var(--yellow);">3 人 (9.4%)</div>
+      </div>
+
+      <!-- 30 - 39 -->
+      <div class="bar-row">
+        <div class="bar-label">30 - 39</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 25%; background: #fb923c;"></div>
+        </div>
+        <div class="bar-val" style="color: #fb923c;">2 人 (6.3%)</div>
+      </div>
+
+      <!-- 20 - 29 -->
+      <div class="bar-row">
+        <div class="bar-label">20 - 29</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 25%; background: #f87171;"></div>
+        </div>
+        <div class="bar-val" style="color: #f87171;">2 人 (6.3%)</div>
+      </div>
+
+      <!-- 10 - 19 -->
+      <div class="bar-row">
+        <div class="bar-label">10 - 19</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 100%; background: var(--red);"></div>
+        </div>
+        <div class="bar-val" style="color: var(--red);">8 人 (25.0%)</div>
+      </div>
+
+      <!-- 0 - 9 -->
+      <div class="bar-row">
+        <div class="bar-label">0 - 9</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 75%; background: #b91c1c;"></div>
+        </div>
+        <div class="bar-val" style="color: #b91c1c;">6 人 (18.8%)</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
